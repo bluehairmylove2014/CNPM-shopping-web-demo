@@ -1,0 +1,40 @@
+body {
+    background-color: #e8eff0;
+}
+
+#navbar-font-link {
+    color:aliceblue;
+    font-size: medium;
+    padding-left: 0;
+    padding-right: 15px;
+}
+#cart-icon{
+    font-size: 40px;
+    color: aliceblue;
+    padding-right: 1rem;
+}
+
+
+.align-left {
+    float: left;
+}
+.align-right {
+    float: right;
+}
+#logo {
+    max-width: 100%;
+    width: 150px;
+}
+.text-logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 1rem;
+}
+.font-link {
+    color:aliceblue;
+    white-space: nowrap;
+    text-decoration: none;
+    padding-right: 2px;
+    padding-left: 5px;
+}
