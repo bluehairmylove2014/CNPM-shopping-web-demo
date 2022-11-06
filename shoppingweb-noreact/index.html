@@ -85,8 +85,8 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Cùng tìm kiếm vài món ăn ngon nào!" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <button type="button" class="btn btn-primary">
+                                        <input type="text" class="form-control" id="search-box" placeholder="Cùng tìm kiếm vài món ăn ngon nào!" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <button type="button" class="btn btn-primary" onclick="searchProcess()">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>
@@ -109,5 +109,12 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+            function searchProcess() {
+                let key = document.getElementById("search-box").value;
+                window.alert("Search for " + key);
+            }
+        </script>
     </body>
 </html>
