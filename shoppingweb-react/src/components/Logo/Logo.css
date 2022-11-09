@@ -1,0 +1,10 @@
+#logo {
+    max-width: 100%;
+    width: 150px;
+}
+.text-logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 1rem;
+}
