@@ -1,11 +1,11 @@
-import SunriseFoodsLogo from '../../assets/SF.png'
+import "./Logo.css"
 
-function Logo() {
+function Logo(props) {
     return (
-        <a class="navbar-brand" href="#">
-            <figure class="figure">
-                <img src={SunriseFoodsLogo} class="figure-img img-fluid rounded" alt="SF logo" id='logo'/>
-                <figcaption class="figure-caption text-center text-logo">Sunrise Foods</figcaption>
+        <a className="navbar-brand" href="#">
+            <figure className="figure">
+                <img src={props.img} className="figure-img img-fluid rounded" alt="SF logo" id='logo'/>
+                <figcaption className="figure-caption text-center text-logo">Sunrise Foods</figcaption>
             </figure>
         </a>
     );

@@ -1,7 +1,9 @@
+import "./Cart.css"
+
 function Cart(cartLink) {
     return (
         <a href={cartLink}>
-            <i class="bi bi-cart" id="cart-icon"></i>
+            <i className="bi bi-cart" id="cart-icon"></i>
         </a>
     );
 }
