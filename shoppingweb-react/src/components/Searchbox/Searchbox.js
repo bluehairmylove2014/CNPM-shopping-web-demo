@@ -15,4 +15,4 @@ function Searchbox() {
     );
 }
 
-export default Searchbox
+export default Searchbox;
