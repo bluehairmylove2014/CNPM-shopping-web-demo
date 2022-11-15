@@ -1,0 +1,22 @@
+.food-thumnail {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 0;
+    border-left: 0!important;
+    border-bottom: 0!important;
+    max-width: 100%;
+    height: auto;
+}
+
+.thumnail-ref-container {
+    text-decoration: none;
+}
+
+.thumnail-text-font {
+    font-weight: 400;
+    color:rgb(0, 0, 0);
+    white-space: nowrap;
+    text-align: center;
+    padding-top: 1rem;
+}

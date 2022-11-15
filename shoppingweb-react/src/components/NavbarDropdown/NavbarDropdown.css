@@ -1,6 +1,13 @@
-#navbar-font-link {
-    color:aliceblue;
+.nav-dropdown-font {
+    position: relative;
+    color:aliceblue!important;
+    font-weight: 400!important;
     font-size: medium;
-    padding-left: 0;
+    padding-left: 15px;
     padding-right: 15px;
+}
+
+
+.nav-dropdown-font:hover {
+    color:yellow!important;
 }

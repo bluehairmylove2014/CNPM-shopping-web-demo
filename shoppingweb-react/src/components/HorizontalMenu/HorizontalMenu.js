@@ -5,7 +5,7 @@ function HorizontalMenu(props) {
     // {}
     // map: ["com", "pho", ...] -> [<a>, <a> ]
     const menu = Object.keys(items).map((el, i) => {
-        return <a href={items[el]} className="font-link" key={i}>{el}</a>
+        return <a href={items[el]} className="nav-menu-font" key={i}>{el}</a>
     });
     return (
         <div className="mt-2">

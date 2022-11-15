@@ -1,15 +1,47 @@
-#navbar-font-link {
-    color:aliceblue;
-    font-size: medium;
-    padding-left: 0;
-    padding-right: 15px;
+
+#navbar-icon-with-text {
+    margin-right:5px;
 }
-#navbar-icon {
+
+.navbar-icon {
+    color:aliceblue!important;
     padding-top: 8px;
     padding-left: 0;
     padding-right: 15px;
     padding-bottom: 8px;
 }
-#navbar-icon-with-text {
-    margin-right:5px;
+
+.navbar-icon:hover {
+    color:yellow!important;
+}
+
+.navbar-font-link {
+    position: relative;
+    color:aliceblue!important;
+    font-size: medium;
+    font-weight: 400!important;
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+.navbar-font-link:hover {
+    color:yellow!important;
+}
+
+.navbar-font-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c8ff00;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+}
+  
+.navbar-font-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }

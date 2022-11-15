@@ -3,7 +3,7 @@ import "./Cart.css"
 function Cart(cartLink) {
     return (
         <a href={cartLink}>
-            <i className="bi bi-cart" id="cart-icon"></i>
+            <i className="bi bi-cart cart-icon"></i>
         </a>
     );
 }

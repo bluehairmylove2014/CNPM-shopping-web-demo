@@ -1,20 +1,9 @@
-#navbar-font-link {
-    color:aliceblue;
-    font-size: medium;
-    padding-left: 0;
-    padding-right: 15px;
-}
-
 .align-left {
     float: left;
 }
 .align-right {
     float: right;
 }
-.font-link {
-    color:aliceblue;
-    white-space: nowrap;
-    text-decoration: none;
-    padding-right: 2px;
-    padding-left: 5px;
+.header-bar-color {
+    background-color: #023B6D;
 }
