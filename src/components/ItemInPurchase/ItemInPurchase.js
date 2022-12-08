@@ -13,7 +13,7 @@ function ItemInPurchase(props) {
                         <p class="sm-title mb-0">Tình trạng: <span class="text-green">{item.status}</span></p>
                         <div class="sm-title mb-0">
                             <i class="fa-solid fa-location-dot "></i>
-                            <span>&#160 Giao hàng tại Việt Nam</span>
+                            <span>&nbsp; Giao hàng tại Việt Nam</span>
                         </div>
                         <p class="sm-title"><i class="bi bi-box-seam-fill"></i>&nbsp; Số lượng: {item.quantity}</p>
                     </div>

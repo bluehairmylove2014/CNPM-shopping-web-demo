@@ -50,13 +50,13 @@ const ListItemDetail = () => {
                             <p class="lger-title pb-2">Khoảng giá</p>
                             <div class="col-6">
                                 <form class="form-floating">
-                                    <input type="number" class="form-control" id="minprice-filter" placeholder="Từ (.000 VNĐ)"/>
+                                    <input type="number" class="form-control" id="minprice-filter" placeholder="Từ (.000 VNĐ)" min="0"/>
                                     <label for="minprice-filter">Từ (.000 VNĐ)</label>
                                 </form>
                             </div>
                             <div class="col-6">
                                 <form class="form-floating">
-                                    <input type="number" class="form-control" id="maxprice-filter" placeholder="Từ (.000 VNĐ)"/>
+                                    <input type="number" class="form-control" id="maxprice-filter" placeholder="Từ (.000 VNĐ)" min="0"/>
                                     <label for="maxprice-filter">Đến (.000 VNĐ)</label>
                                 </form>
                             </div>

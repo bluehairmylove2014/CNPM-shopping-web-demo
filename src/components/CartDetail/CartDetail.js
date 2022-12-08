@@ -23,7 +23,16 @@ const recommend = [
     {img: foodThum1, name: "Cơm Chay Chỉ Thiên", link: "/item", fstar: 3, hstar: 0, nstar: 2, rvcount: 26.546, price: 89}
 ]
 
+function sellectAllClick(e) {
+    if (e.currentTarget.checked) {
+        $('.sellectItem').find('input[type="checkbox"]').prop('checked', true);
+    } else {    
+        $('.sellectItem').find('input[type="checkbox"]').prop('checked', false);
+    }
+}
+
 const CartDetail = () => {
+
     return (
         <div className="container mt-5">
             <div className="row pb-5">
@@ -33,7 +42,7 @@ const CartDetail = () => {
                         <p className="ctdetail-xxlg-title">Shopping Cart</p>
                         <div>
                             <div className="form-check align-left">
-                                <input className="form-check-input sellectItem" type="checkbox" id="sellectAll"/>
+                                <input className="form-check-input sellectItem" type="checkbox" id="sellectAll" onChange={sellectAllClick}/>
                                 <label className="form-check-label" for="sellectAll">Sellect All</label>
                             </div>
                             <p className="align-right">Price</p>

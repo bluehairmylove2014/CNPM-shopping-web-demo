@@ -1,3 +1,6 @@
+
+import $ from 'jquery'; 
+
 import RatingStarGenerator from '../RatingStars/RatingStars'
 import FoodMenu  from '../FoodMenu/FoodMenu'
 
@@ -38,6 +41,11 @@ const recommend = [
     {img: foodThum_5, name: "Thập Cẩm Chả Biết Tên", link: "/item", fstar: 4, hstar: 0, nstar: 1, rvcount: 15.927, price: 102},
     {img: foodThum_6, name: "Cơm Chay Chỉ Thiên", link: "/item", fstar: 3, hstar: 0, nstar: 2, rvcount: 26.546, price: 89}
 ];
+
+function changeSellectToInput() {
+    if ($('#qty-itdetail').find(":selected").val() == 'many')
+        $('#qty-itdetail').replaceWith('<input type="number" class="form-control small-img" id="qty-itdetail">');
+}
 
 const ItemDetail = () => {
     return (
@@ -121,7 +129,7 @@ const ItemDetail = () => {
                             <form className="form-group pt-2">
                                 <label for="qty-itdetail" className="form-label">Quantity:&nbsp; </label>
                                 <span className="d-inline-block">
-                                    <select className="form-control" id="qty-itdetail">
+                                    <select className="form-control" id="qty-itdetail" onChange={changeSellectToInput}>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
