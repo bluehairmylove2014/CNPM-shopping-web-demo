@@ -27,19 +27,19 @@ function App() {
                 </Routes>
 
                 <Routes>
-                    <Route path="/cart" element={<CartDetail/>} />
+                <Route path="/cart" element={<CartDetail/>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/item" element={<ItemDetail/>} />
+                <Route path="/item" element={<ItemDetail/>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/buy" element={<BuyDetail/>} />
+                <Route path="/buy" element={<BuyDetail/>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/list" element={<ListItemDetail/>} />
+                <Route path="/list" element={<ListItemDetail/>} />
                 </Routes>
 
                 <Footer/>
