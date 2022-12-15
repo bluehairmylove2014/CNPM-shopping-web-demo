@@ -5,7 +5,7 @@ import Header from './components/Header/Header'
 import HomeDetail from './components/HomeDetail/HomeDetail'
 import CartDetail from './components/CartDetail/CartDetail'
 import ItemDetail from './components/ItemDetail/ItemDetail'
-import ListItemDetail from './components/ListItemDetail/ListItemDetail'
+import Products from './components/Products/Products'
 import Footer from './components/Footer/Footer'
 
 import {
@@ -14,6 +14,8 @@ import {
     Route,
   } from "react-router-dom";
 import BuyDetail from './components/BuyDetail/BuyDetail';
+
+
 
 
 function App() {
@@ -27,19 +29,19 @@ function App() {
                 </Routes>
 
                 <Routes>
-                <Route path="/cart" element={<CartDetail/>} />
+                    <Route path="/cartdetail" element={<CartDetail/>} />
                 </Routes>
 
                 <Routes>
-                <Route path="/item" element={<ItemDetail/>} />
+                    <Route path="/item" element={<ItemDetail/>} />
                 </Routes>
 
                 <Routes>
-                <Route path="/buy" element={<BuyDetail/>} />
+                    <Route path="/buy" element={<BuyDetail />} />
                 </Routes>
 
                 <Routes>
-                <Route path="/list" element={<ListItemDetail/>} />
+                    <Route path="/products" element={<Products/>} />
                 </Routes>
 
                 <Footer/>

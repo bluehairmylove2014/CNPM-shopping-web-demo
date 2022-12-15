@@ -24,9 +24,9 @@ import foodThum6 from '../../assets/images/FoodThumnail/donhat.png'
 const MENU_TYPE = {SMALL: 0,LARGE: 1};
 
 let large_banner = [
-    {img: banner1, link: "banner1.com", index: 0, id: "#main-large-banner"},
-    {img: banner2, link: "banner2.com", index: 1, id: "#main-large-banner"},
-    {img: banner3, link: "banner3.com", index: 2, id: "#main-large-banner"}
+    {img: banner3, link: "banner3.com", index: 0, id: "#main-large-banner"},
+    {img: banner1, link: "banner1.com", index: 1, id: "#main-large-banner"},
+    {img: banner2, link: "banner2.com", index: 2, id: "#main-large-banner"}
 ]
 
 let small_banners_1 = [
@@ -45,22 +45,22 @@ let rect_banners = [
 ]
 
 let recommend = [
-    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", fstar: 4, hstar: 0, nstar: 1, rvcount: 12.567, price: 89},
-    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", fstar: 3, hstar: 1, nstar: 1, rvcount: 8.291, price: 25},
-    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", fstar: 5, hstar: 0, nstar: 0, rvcount: 163.523, price: 999},
-    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", fstar: 3, hstar: 1, nstar: 1, rvcount: 1.286, price: 56},
-    {img: foodThum5, name: "Thập Cẩm Chả Biết Tên", link: "/item", fstar: 4, hstar: 0, nstar: 1, rvcount: 15.927, price: 102},
-    {img: foodThum6, name: "Cơm Chay Chỉ Thiên", link: "/item", fstar: 3, hstar: 0, nstar: 2, rvcount: 26.546, price: 89}
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item",rating: 3.5, rvcount: 8.291, price: 25},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56},
+    {img: foodThum5, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102},
+    {img: foodThum6, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89}
 ]
 
 let sale_thumnails_1 = [
-    {img: foodThum1, name: "Bún Đậu Mắm Tôm", link: "/item", brand: "Sunrise Foods", fstar: 4, hstar: 0, nstar: 1, rvcount: 12.567, price: 89, status: "Còn hàng"},
-    {img: foodThum2, name: "Cơm Tấm Thôn Quê", link: "/item", brand: "Sunrise Foods", fstar: 3, hstar: 1, nstar: 1, rvcount: 8.291, price: 25, status: "Còn hàng"},
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm", link: "/item", brand: "Sunrise Foods", rating: 4, rvcount: 12.567, price: 89, status: "Còn hàng"},
+    {img: foodThum2, name: "Cơm Tấm Thôn Quê", link: "/item", brand: "Sunrise Foods", rating: 3.5, rvcount: 8.291, price: 25, status: "Còn hàng"},
 ]
 
 let sale_thumnails_2 = [
-    {img: foodThum2, name: "Thập Cẩm Chả Biết Tên", link: "/item", brand: "Sunrise Foods", fstar: 4, hstar: 0, nstar: 1, rvcount: 15.927, price: 102, status: "Còn hàng"},
-    {img: foodThum5, name: "Cơm Chay Chỉ Thiên", link: "/item", brand: "Sunrise Foods", fstar: 3, hstar: 0, nstar: 2, rvcount: 26.546, price: 89, status: "Còn hàng"}
+    {img: foodThum2, name: "Thập Cẩm Chả Biết Tên", link: "/item", brand: "Sunrise Foods", rating: 4, rvcount: 15.927, price: 102, status: "Còn hàng"},
+    {img: foodThum5, name: "Cơm Chay Chỉ Thiên", link: "/item", brand: "Sunrise Foods", rating: 3, rvcount: 26.546, price: 89, status: "Còn hàng"}
 ]
 
 const HomeDetail = () => {
@@ -89,13 +89,31 @@ const HomeDetail = () => {
                 </div>
             </section>
             <div className="mt-3 bg-white">
-                <p className='menu-large-font'>Bạn muốn ăn gì?</p>
+                <p className='menu-large-font'>Bạn muốn ăn gì?
+                    <span>
+                        <a 
+                            href='/products' 
+                            className='erase-underline sm-title ps-2 text-green'
+                        >
+                                Xem thêm
+                        </a>
+                    </span>
+                </p>
                 <div className='m-0 pb-2'>
                     <FoodMenu imgs={recommend} type={MENU_TYPE.SMALL}/>
                 </div>
             </div>
             <div className="mt-3 bg-white">
-                <p className='menu-large-font'>Đang giảm giá siêu sốc!</p>
+                <p className='menu-large-font'>Đang giảm giá siêu sốc!
+                    <span>
+                        <a 
+                            href='/products' 
+                            className='erase-underline sm-title ps-2 text-green'
+                        >
+                                Xem thêm
+                        </a>
+                    </span>
+                </p>
                 <div className='row'>
                     <div className='col-12 col-lg-4 ps-4 pe-0 pb-3'>
                         <div id="sale-banner" className="carousel slide me-4" data-bs-ride="carousel">
@@ -113,7 +131,16 @@ const HomeDetail = () => {
                 </div>
             </div>
             <div className="mt-3 bg-white mb-5">
-                <p className='menu-large-font'>Gợi ý hôm nay</p>
+                <p className='menu-large-font'>Gợi ý hôm nay
+                    <span>
+                        <a 
+                            href='/products' 
+                            className='erase-underline sm-title ps-2 text-green'
+                        >
+                                Xem thêm
+                        </a>
+                    </span>
+                </p>
                 <div className='m-0'>
                     <FoodMenu imgs={recommend} type={MENU_TYPE.SMALL}/>
                 </div>

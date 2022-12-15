@@ -12,11 +12,8 @@ import foodThum_5 from '../../assets/images/FoodThumnail/lau.png'
 import foodThum_6 from '../../assets/images/FoodThumnail/donhat.png'
 
 import about_1 from '../../assets/images/abouts/about-1.png'
-import about_2 from '../../assets/images/abouts/about-2.png'
 
 import food_item_1 from '../../assets/images/foods/food_1.png'
-import food_item_2 from '../../assets/images/foods/food_2.png'
-import food_item_3 from '../../assets/images/foods/food_3.png'
 
 import achievement_icon from '../../assets/images/icons/achievement.png'
 import certificate_icon from '../../assets/images/icons/certificate.png'
@@ -34,17 +31,17 @@ const food = {
 };
 
 const recommend = [
-    {img: foodThum_1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", fstar: 4, hstar: 0, nstar: 1, rvcount: 12.567, price: 89},
-    {img: foodThum_2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", fstar: 3, hstar: 1, nstar: 1, rvcount: 8.291, price: 25},
-    {img: foodThum_3, name: "Cá Viên Chiên Makima", link: "/item", fstar: 5, hstar: 0, nstar: 0, rvcount: 163.523, price: 999},
-    {img: foodThum_4, name: "Nem Cuốn Hàn Xẻng", link: "/item", fstar: 3, hstar: 1, nstar: 1, rvcount: 1.286, price: 56},
-    {img: foodThum_5, name: "Thập Cẩm Chả Biết Tên", link: "/item", fstar: 4, hstar: 0, nstar: 1, rvcount: 15.927, price: 102},
-    {img: foodThum_6, name: "Cơm Chay Chỉ Thiên", link: "/item", fstar: 3, hstar: 0, nstar: 2, rvcount: 26.546, price: 89}
+    {img: foodThum_1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89},
+    {img: foodThum_2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25},
+    {img: foodThum_3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999},
+    {img: foodThum_4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56},
+    {img: foodThum_5, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102},
+    {img: foodThum_6, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89}
 ];
 
 function changeSellectToInput() {
-    if ($('#qty-itdetail').find(":selected").val() == 'many')
-        $('#qty-itdetail').replaceWith('<input type="number" class="form-control small-img" id="qty-itdetail">');
+    if ($('#qty-itdetail').find(":selected").val() === 'many')
+        $('#qty-itdetail').replaceWith('<input type="number" class="form-control small-img" min=0 id="qty-itdetail">');
 }
 
 const ItemDetail = () => {
@@ -62,7 +59,7 @@ const ItemDetail = () => {
                         <p className="itdetail-lger-title">{food.name}</p>
                         <p className="itdetail-me-title text-indigo">Thương Hiệu: {food.brand}</p>
                         
-                        <RatingStarGenerator full_stars={food.fstar} half_stars={food.hstar} null_stars={food.nstar} optionClass={"align-left"}/>
+                        <RatingStarGenerator star={food.rating} optionClass={"align-left"}/>
 
                         <p className="review-count align-left">&nbsp; {food.rvcount} reviews</p>
                         {/* {{!-- Alternative item image --}} */}
@@ -127,10 +124,10 @@ const ItemDetail = () => {
                             <p className="me-title pt-2">Tình trạng: <span className="text-green">{food.status}</span></p>
 
                             <form className="form-group pt-2">
-                                <label for="qty-itdetail" className="form-label">Quantity:&nbsp; </label>
+                                <label htmlFor="qty-itdetail" className="form-label">Quantity:&nbsp; </label>
                                 <span className="d-inline-block">
                                     <select className="form-control" id="qty-itdetail" onChange={changeSellectToInput}>
-                                        <option value="1" selected>1</option>
+                                        <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                         <option value="4">4</option>
@@ -155,7 +152,7 @@ const ItemDetail = () => {
                 <div className="itdetail-about">
                     <div className="row">
                         <div className="col-12 col-lg-6 col-xl-7 pe-0 pb-4">
-                            <img src={about_1} className="img-fluid itdetail-food-img"/>
+                            <img src={about_1} className="img-fluid itdetail-food-img" alt='restaurant'/>
                         </div>
                         <div className="col-12 col-lg-6 col-xl-5 ps-5">
                             <p className="itdetail-lg-title text-center"><b>ĐƯỢC THÀNH LẬP VÀ PHÂN PHỐI BỞI<br/>SUNRISE COMPANY</b><br/><br/></p>

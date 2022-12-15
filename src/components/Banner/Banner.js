@@ -3,30 +3,34 @@
 function Banner(props) {
     const banners = props.imgs;
 
-    let indicators = banners.map((banner) => {
+    let indicators = banners.map((banner, index) => {
         if (banner.index == 0) 
             return  <button type="button" 
                             data-bs-target={banner.id}
                             data-bs-slide-to={banner.index} 
                             className="active" 
-                            aria-current="true">
+                            aria-current="true"
+                            key={index}>
                     </button>
         else
             return  <button type="button" 
                             data-bs-target={banner.id}
-                            data-bs-slide-to={banner.index}>
+                            data-bs-slide-to={banner.index}
+                            key={index}>
                     </button>
     });
 
-    let inners = banners.map((banner) => {
+    let inners = banners.map((banner, index) => {
         if (banner.index == 0) 
             return  <a  className="carousel-item active" 
-                        href={banner.link}>
+                        href={banner.link}
+                        key={index}>
                             <img className="d-block w-100" src={banner.img} alt="banner"/>
                     </a>
         else
             return  <a  className="carousel-item" 
-                        href={banner.link}>
+                        href={banner.link}
+                        key={index}>
                             <img className="d-block w-100" src={banner.img} alt="banner"/>
                     </a>
     });

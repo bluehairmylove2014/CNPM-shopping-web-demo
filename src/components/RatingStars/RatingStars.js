@@ -1,18 +1,19 @@
 
 
 function RatingStars(props) {
-    const fstars = props.full_stars;
-    const hstars = props.half_stars;
-    const nstars = props.null_stars;
+    let fstars = Math.floor(props.star);
+    let hstars = Math.floor(props.star.toString().split('.').length / 2);
+    let nstars = 5 - fstars - hstars;
+
     let rating_class = "ratings";
 
     let stars = [];
     for (let i = 0; i < fstars; i++)
-        stars.push(<i className="bi bi-star-fill rating-color"></i>);
+        stars.push(<i className="bi bi-star-fill rating-color" key={"fstar" + i}></i>);
     for (let i = 0; i < hstars; i++)
-        stars.push(<i className="bi bi-star-half rating-color"></i>)
+        stars.push(<i className="bi bi-star-half rating-color" key={"hstar" + i}></i>)
     for (let i = 0; i < nstars; i++)    
-        stars.push(<i className="bi bi-star"></i>)
+        stars.push(<i className="bi bi-star" key={"nstar" + i}></i>)
 
     if(props.optionClass != undefined)
         rating_class += " " + props.optionClass;
