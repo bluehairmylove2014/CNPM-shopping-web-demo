@@ -119,7 +119,7 @@ class Header extends React.Component {
                                         className="nav-link disabled navbar-font-link pb-2 m-0">|</p></li>
 
                                     <li className="nav-item">
-                                        <a className="nav-link active navbar-font-link pb-2 m-0" href="#">Đăng nhập</a>
+                                        <a className="nav-link active navbar-font-link pb-2 m-0" href="/login">Đăng nhập</a>
                                     </li>
                                 </ul>
                             </div>

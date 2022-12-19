@@ -7,6 +7,8 @@ import CartDetail from './components/CartDetail/CartDetail'
 import ItemDetail from './components/ItemDetail/ItemDetail'
 import Products from './components/Products/Products'
 import Footer from './components/Footer/Footer'
+import LoginPage from './components/Login/Login'
+import RegisterPage from './components/Register/Register'
 
 import {
     BrowserRouter,
@@ -22,29 +24,39 @@ function App() {
     return (
         <BrowserRouter>
             <div className='bg-eee'>
-                <Header/>
 
                 <Routes>
-                    <Route exact path="/" element={<HomeDetail/>} />
+                    <Route exact path="/" element={<><Header/><HomeDetail/><Footer/></>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/cartdetail" element={<CartDetail/>} />
+                    <Route exact path="/user@" element={<><Header/><HomeDetail/><Footer/></>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/item" element={<ItemDetail/>} />
+                    <Route exact path="/login" element={<LoginPage/>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/buy" element={<BuyDetail />} />
+                    <Route exact path="/register" element={<RegisterPage/>} />
                 </Routes>
 
                 <Routes>
-                    <Route path="/products" element={<Products/>} />
+                    <Route path="/cartdetail" element={<><Header/><CartDetail/><Footer/></>} />
                 </Routes>
 
-                <Footer/>
+                <Routes>
+                    <Route path="/item" element={<><Header/><ItemDetail/><Footer/></>} />
+                </Routes>
+
+                <Routes>
+                    <Route path="/buy" element={<><Header/><BuyDetail /><Footer/></>} />
+                </Routes>
+
+                <Routes>
+                    <Route path="/products" element={<><Header/><Products/><Footer/></>} />
+                </Routes>
+
             </div>
         </BrowserRouter>
     );
