@@ -1,16 +1,8 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 
 import NotifyDropdown from './NotifyDropdown'
 
 import sunrise_logo from '../../assets/images/logo/SunriseFoods-logo.png'
-// import flavorofindia_logo from '../../assets/images/logo/FlavourOfIndia-logo.png'
-// import panzerhot_logo from '../../assets/images/logo/PanzerHot-logo.png'
-// import friggitoria_logo from '../../assets/images/logo/Friggitoria-logo.png'
-
-// import qiqifallen_icon from '../../assets/images/icons/qiqi-fallen-emptynoti.png'
-
-
 
 class Header extends React.Component {
 
@@ -88,13 +80,7 @@ class Header extends React.Component {
                                 <ul className="navbar-nav ml-0">
                                     
                                     {/* Render a notification dropdown type nav-item */}
-                                    <li className="nav-item notify-dropdown">
-                                        <button className="nav-link emptyBtn active navbar-font-link pb-2 m-0" >
-                                            <i className="bi bi-bell" id="navbar-icon-with-text"></i>
-                                            Thông báo
-                                        </button>
-                                        <NotifyDropdown/>
-                                    </li>
+                                    <NotifyDropdown/>
 
                                     <li className="nav-item dropdown">
                                         <a
@@ -112,7 +98,7 @@ class Header extends React.Component {
                                     </li>
 
                                     <li className="nav-item">
-                                        <a className="nav-link active navbar-font-link pb-2 m-0" href="#">Đăng ký</a>
+                                        <a className="nav-link active navbar-font-link pb-2 m-0" href="/register">Đăng ký</a>
                                     </li>
 
                                     <li className="nav-item"><p

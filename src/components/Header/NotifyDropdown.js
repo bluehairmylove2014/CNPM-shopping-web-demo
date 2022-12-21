@@ -8,7 +8,7 @@ import friggitoria_logo from '../../assets/images/logo/Friggitoria-logo.png'
 import qiqifallen_icon from '../../assets/images/icons/qiqi-fallen-emptynoti.png'
 
 export default class NotifyDropdown extends React.Component {
-    
+
     state = {
         notifications: [
             {key: 'notisunrise1', img: sunrise_logo, name: 'Sunrise Foods', content: 'Order some delicious meal today! We have some voucher for you', time: '3 hours ago'},
@@ -26,7 +26,13 @@ export default class NotifyDropdown extends React.Component {
             }
         }
         this.setState({notifications: newNotifications});
-        
+    }
+
+    numOfNoti(count) {
+        if(count > 0)
+            return (<span className="noti-number">{count}</span>)
+        else 
+            return (<></>)
     }
 
     renderNotiElement() {
@@ -93,7 +99,14 @@ export default class NotifyDropdown extends React.Component {
     render() {
         return (
             <>
-                {this.renderNotiElement()}
+                <li className="nav-item notify-dropdown">
+                    <button className="nav-link dropdown-btn-wrapper">
+                        {this.numOfNoti(this.state.notifications.length)}
+                        <i className="bi bi-bell" id="navbar-icon-with-text"></i>
+                        Thông báo
+                    </button>
+                    {this.renderNotiElement()}
+                </li>
             </>
         )
     }

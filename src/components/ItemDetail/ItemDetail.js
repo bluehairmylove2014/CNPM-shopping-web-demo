@@ -26,7 +26,9 @@ const food = {
     name: "SALAD NGŨ VỊ HOÀNG GIA ANH",
     link: "/item",
     brand: "Sunrise Foods",
-    fstar: 4, hstar: 1, nstar: 0, rvcount: "41.002", price: 49,
+    rating: 4.5,
+    rvcount: "41.002", 
+    price: 49,
     status: "Còn hàng"
 };
 
