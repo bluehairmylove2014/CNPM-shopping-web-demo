@@ -8,7 +8,7 @@ import friggitoria_logo from '../../assets/images/logo/Friggitoria-logo.png'
 
 import qiqifallen_icon from '../../assets/images/icons/qiqi-fallen-emptynoti.png'
 
-export default class NotifyDropdown extends React.Component {
+export default class NotifyDropdownUser extends React.Component {
 
     state = {
         notifications: [
@@ -100,7 +100,7 @@ export default class NotifyDropdown extends React.Component {
         return (
             <>
                 <li className="nav-item notify-dropdown">
-                    <button className="nav-link dropdown-btn-wrapper">
+                    <button className="nav-link dropdown-btn-wrapper h-100">
                         {this.numOfNoti(this.state.notifications.length)}
                         <i className="bi bi-bell" id="navbar-icon-with-text"></i>
                         Thông báo

@@ -19,7 +19,7 @@ import leftArrow from '../../assets/images/icons/left.png'
 import React from 'react'
 import $ from 'jquery'
 
-const foods = [
+const datapage_callAPI = [
     {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
     {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
     {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
@@ -30,6 +30,46 @@ const foods = [
     {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
     {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
     {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"}
+];
+
+let foods = [
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
+    {img: foodThum1, name: "Bún Đậu Mắm Tôm chuẩn ngon", link: "/item", rating: 4, rvcount: 12.567, price: 89, brand: "Friggitoria"},
+    {img: foodThum2, name: "Cơm Tấm Hoàng Diệu 2", link: "/item", rating: 3.5, rvcount: 8.291, price: 25, brand: "Flavour of India"},
+    {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999, brand: "Sunrise Foods"},
+    {img: foodThum4, name: "Nem Cuốn Hàn Xẻng", link: "/item", rating: 3.5, rvcount: 1.286, price: 56, brand: "Sunrise Foods"},
+    {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
+    {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
     {img: foodThum6, name: "Thập Cẩm Chả Biết Tên", link: "/item", rating: 4, rvcount: 15.927, price: 102, brand: "Panzer Hot"},
     {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
     {img: foodThum2, name: "Cơm Chay Chỉ Thiên", link: "/item", rating: 3, rvcount: 26.546, price: 89, brand: "Sunrise Foods"},
@@ -49,6 +89,8 @@ const restaurant_brand = [
 ];
 
 const SORT = { DECREASE: 0, INCREASE: 1 };
+const LIST_LENGTH = 9;
+const MAX_PAGENUMBER_SHOW = 3;
 const isLowerPriceThan = (a, b) => {
     if(a.price <= b.price) return true; 
     else return false;
@@ -66,7 +108,6 @@ const isMoreRateThan = (a, b) => {
     else return false;
 }
 
-
 export default class Products extends React.Component {
     state = {
         current_food: [
@@ -81,7 +122,7 @@ export default class Products extends React.Component {
             {img: foodThum3, name: "Cá Viên Chiên Makima", link: "/item", rating: 5, rvcount: 163.523, price: 999}
         ],
         lastfood_index: 8,
-        page_count: 3
+        page_count: foods.length % 9 != 0 ? Math.floor(foods.length / 9) + 1 : Math.floor(foods.length / 9)
     }
     mergeSort = (arr, comparator) => {
         if(arr.length <= 1) return arr;
@@ -104,14 +145,11 @@ export default class Products extends React.Component {
         return [...sortedItems, ...left, ...right];
     }
     sortEngine = (order, compareHandler) => {
-        let resultArr;
-        if(order == SORT.DECREASE) {
-            resultArr = this.mergeSort(this.state.current_food, compareHandler);
-        }
-        else if(order == SORT.INCREASE) {
-            resultArr = this.mergeSort(this.state.current_food, compareHandler);
-        }
-        this.setState({current_food: resultArr});
+        if(order == SORT.DECREASE)
+            foods = this.mergeSort(foods, compareHandler);
+        else if(order == SORT.INCREASE)
+            foods = this.mergeSort(foods, compareHandler);
+        this.changepagenumber(1, this.state.page_count);
     }
     handleFilterOption = (type) => {
         if($(type).prop('checked') == true) {
@@ -141,12 +179,19 @@ export default class Products extends React.Component {
         minPrice == "" ? minPrice = 0 : minPrice = Number(minPrice);
         maxPrice == "" ? maxPrice = 0 : maxPrice = Number(maxPrice);
 
-        const newFoodArr = [];
-        for(let i = 0; i <= this.state.lastfood_index; i++) {
-            if(minPrice <= foods[i].price && foods[i].price <= maxPrice)
-                newFoodArr.push(foods[i]);
+        foods = [];
+        for(let i = 0; i < datapage_callAPI.length; i++) {
+            if(datapage_callAPI[i].price >= minPrice && datapage_callAPI[i].price <= maxPrice) {
+                foods.push(datapage_callAPI[i]);
+            }
         }
-        this.setState({current_food: newFoodArr})
+        this.setState({page_count: (foods.length % 9 != 0 ? Math.floor(foods.length / 9) + 1 : Math.floor(foods.length / 9))});
+        this.changepagenumber(1, this.state.page_count);
+    }
+    deleteFilterPrice = () => {
+        foods = datapage_callAPI; // Refresh
+        this.setState({page_count: (foods.length % 9 != 0 ? Math.floor(foods.length / 9) + 1 : Math.floor(foods.length / 9))});
+        this.changepagenumber(1, this.state.page_count);
     }
     handleFilterBrand = (brandName) => {
         const newFoodArr = [];
@@ -159,8 +204,12 @@ export default class Products extends React.Component {
     changepagenumber = (index, total) => {
         if(index > 0 && index <= total) {
             let newFoodList = [];
-            let start = (index - 1) * 9;
-            let end = start + 9;
+            let start = (index - 1) * LIST_LENGTH;
+            let end = start + LIST_LENGTH;
+
+            // Move to the head of page
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+
             if(foods.length <= end)
                 end = foods.length;
             for(; start < end; start++) {
@@ -168,14 +217,15 @@ export default class Products extends React.Component {
             }
             this.setState({lastfood_index:--end});
             this.setState({current_food: newFoodList});
-            console.log(this.state.lastfood_index)
         }
     }
     createPageNumber(total) {
         if(total > 1) {
-            let current_page = Math.floor(this.state.lastfood_index / 9) + 1;
-
+            let current_page = Math.floor(this.state.lastfood_index / LIST_LENGTH) + 1;
             let pageNumBtn = [];
+            let numberOfNBTN = 0;
+
+            // Create prevpage_btn
             pageNumBtn.push (
                 <span className='pe-1' key='prev'>
                     <button type='button' className='page-number-btn' onClick={() => this.changepagenumber(current_page - 1, total)}>
@@ -183,23 +233,30 @@ export default class Products extends React.Component {
                     </button>
                 </span>
             )
-            for(let i = 0; i < total; i++) {
+            // Create numberpage_btn
+            for(let i = 1; i <= total && numberOfNBTN < MAX_PAGENUMBER_SHOW; i++) {
                 let class_name = 'page-number-btn';
-                if(i + 1 == current_page)
+                if(i == current_page)
                     class_name += ' page-number-btn-active';
                 pageNumBtn.push (
                     <span className='pe-1' key={i}>
                         <button 
                             type='button' 
                             className={class_name}
-                            onClick={() => this.changepagenumber(i + 1, total)}
-                            id={'page-btn-' + (i + 1)}
+                            onClick={() => this.changepagenumber(i, total)}
+                            id={'page-btn-' + i}
                         >
-                            {i + 1}
+                            {i}
                         </button>
                     </span>
                 )
+                ++numberOfNBTN;
+                if(numberOfNBTN == MAX_PAGENUMBER_SHOW && current_page >= i && i + 1 <= total) {
+                    pageNumBtn.splice(1, 1);
+                    --numberOfNBTN;
+                }
             }
+            // Create nextpage_btn
             pageNumBtn.push (
                 <span className='pe-1' key='next'>
                     <button type='button' className='page-number-btn' onClick={() => this.changepagenumber(current_page + 1, total)}>
@@ -222,11 +279,13 @@ export default class Products extends React.Component {
         return (
             <div className="bg-white">
                 <div className="container pt-5">
-                    <p className="xlg-title mb-0">RESULTS</p>
-                    <p className="me-title opacity-75">Price and other details may vary based on product size and colour.</p>
-                    <hr/>
-                    <div className="row mt-3">
-                        <div className="col-12 col-md-4">
+                    <div className='scale-fade-in-normal-animation'>
+                        <p className="xlg-title mb-0">RESULTS</p>
+                        <p className="me-title opacity-75">Price and other details may vary based on product size and colour.</p>
+                    </div>
+                    <hr className='hr-out-animation'/>
+                    <div className="row mt-4">
+                        <div className="col-12 col-md-4 scale-fade-in-normal-animation">
                             <i className="bi bi-sliders2-vertical me-title">&nbsp; Bộ lọc</i>
                             <div className="row mt-4">
                                 <p className="lger-title pb-2">Khoảng giá</p>
@@ -242,8 +301,11 @@ export default class Products extends React.Component {
                                         <label htmlFor="maxprice-input">Đến (.000 VNĐ)</label>
                                     </form>
                                 </div>
-                                <div className='text-center pt-3'>
-                                    <button className='btn btn-primary w-50' onClick={() => this.handleFilterPrice()}>Xác nhận lọc</button>
+                                <div className="col-6 text-center pt-3">
+                                    <button className='btn btn-primary w-100' onClick={() => this.handleFilterPrice()}>Xác nhận lọc</button>
+                                </div>
+                                <div className="col-6 text-center pt-3">
+                                    <button className='btn btn-secondary w-100' onClick={() => this.deleteFilterPrice()}>Xóa bộ lọc</button>
                                 </div>
                             </div>
 
@@ -313,7 +375,7 @@ export default class Products extends React.Component {
                             </div>
                             <hr className="list-splitline mb-5"/>
                         </div>
-                        <div className="col-12 col-md-8">
+                        <div className="col-12 col-md-8 scale-fade-in-normal-animation">
                             <div className="row">
                                 <FoodList foods={this.state.current_food}/>
                             </div>

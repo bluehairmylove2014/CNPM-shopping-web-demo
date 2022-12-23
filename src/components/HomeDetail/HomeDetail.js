@@ -1,3 +1,6 @@
+
+import {Link} from 'react-router-dom'
+
 import Banner from '../Banner/Banner'
 import FoodMenu from '../FoodMenu/FoodMenu'
 
@@ -65,11 +68,11 @@ let sale_thumnails_2 = [
 
 const HomeDetail = () => {
     return (
-        <div className="container pt-4 mt-4">
+        <div className="container pt-4 mt-4 moveup-fadein-animation">
             <img src="" />
             <section>
                 <div className='row'>
-                    <div className='col-12 col-md-8'>
+                    <div className='col-12 col-md-8 '>
                         <div id="main-large-banner" className="carousel slide" data-bs-ride="carousel">
                             <Banner imgs={large_banner}/>
                         </div>
@@ -91,12 +94,12 @@ const HomeDetail = () => {
             <div className="mt-3 bg-white">
                 <p className='menu-large-font'>Bạn muốn ăn gì?
                     <span>
-                        <a 
-                            href='/products' 
+                        <Link 
+                            to='/products' 
                             className='erase-underline sm-title ps-2 text-green'
                         >
                                 Xem thêm
-                        </a>
+                        </Link>
                     </span>
                 </p>
                 <div className='m-0 pb-2'>
@@ -106,12 +109,12 @@ const HomeDetail = () => {
             <div className="mt-3 bg-white">
                 <p className='menu-large-font'>Đang giảm giá siêu sốc!
                     <span>
-                        <a 
-                            href='/products' 
+                        <Link 
+                            to='/products' 
                             className='erase-underline sm-title ps-2 text-green'
                         >
                                 Xem thêm
-                        </a>
+                        </Link>
                     </span>
                 </p>
                 <div className='row'>
@@ -133,12 +136,12 @@ const HomeDetail = () => {
             <div className="mt-3 bg-white mb-5">
                 <p className='menu-large-font'>Gợi ý hôm nay
                     <span>
-                        <a 
-                            href='/products' 
+                        <Link 
+                            to='/products' 
                             className='erase-underline sm-title ps-2 text-green'
                         >
                                 Xem thêm
-                        </a>
+                        </Link>
                     </span>
                 </p>
                 <div className='m-0'>

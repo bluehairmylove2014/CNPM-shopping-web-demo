@@ -1,12 +1,39 @@
+// Import library
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-
-import NotifyDropdown from './NotifyDropdown'
-
+import $ from 'jquery'
+// Import component
+import NotifyDropdownUser from './NotifyDropdownUser'
+// Import image
 import sunrise_logo from '../../assets/images/logo/SunriseFoods-logo.png'
+import avt from '../../assets/images/user/avt/001.jpg'
 
-function Header() {
+const onMouseUp = e => {
+    let avt_dropdown = $('.user-dropdown-content');
+    if (!avt_dropdown.is(e.target) // If the target of the click isn't the container...
+    && avt_dropdown.has(e.target).length === 0) // ... or a descendant of the container.
+    {
+        avt_dropdown.removeClass("active");
+    }
+}
+
+const STATUS = {
+    BAN: -1,
+    NORMAL: 1,
+    ANONYOUS: 0
+}
+
+const TYPE = {
+    NORMAL_USER: 0,
+    ADMIN: 1,
+    SELLER: -1
+}
+
+function HeaderUser(props) {
     const navigate = useNavigate();
+    let adminActiveCln = '';
+    let sellerActiveCln = '';
+
     const searchProcess = () => {
         navigate("/products");
     }
@@ -15,6 +42,33 @@ function Header() {
         if(event.key == 'Enter') {
             navigate("/products");
         }
+    }
+
+    const showAvtDropdown = (e) => {
+        let avt_dropdown = $(".user-dropdown-content");
+        avt_dropdown.toggleClass('active').promise().done(() => {
+            if (avt_dropdown.hasClass('active')) {
+                $(document).on('mouseup', onMouseUp) // Only listen for mouseup when menu is active...
+            } else {
+                $(document).off('mouseup', onMouseUp) // else remove listener.
+            }
+        })
+    }
+    const clickLogOut = () => {
+        props.logoutMethod();
+    }
+    const clickAdmin = () => {
+        navigate('/admin')
+    }
+    const clickSeller = () => {
+        
+    }
+
+    if(props.userAccount.type == TYPE.ADMIN) {
+        adminActiveCln = 'active';
+    }
+    else if(props.userAccount.type == TYPE.SELLER) {
+        sellerActiveCln = 'active';
     }
 
     return (
@@ -77,10 +131,10 @@ function Header() {
                             </ul>
 
                             {/* {{! Right links field }} */}
-                            <ul className="navbar-nav ml-0">
+                            <ul className="navbar-nav">
                                 
                                 {/* Render a notification dropdown type nav-item */}
-                                <NotifyDropdown/>
+                                <NotifyDropdownUser/>
 
                                 <li className="nav-item dropdown pe-2">
                                     <p
@@ -93,20 +147,57 @@ function Header() {
                                     </p>
                                     <ul className="dropdown-menu dropdown-menu-dark">
                                         <li>
-                                            <Link className="dropdown-item" to="/">Tiếng Việt</Link>
+                                            <Link className="dropdown-item" hretof="/">Tiếng Việt</Link>
                                         </li>
                                     </ul>
                                 </li>
 
-                                <li className="nav-item">
-                                    <Link className="nav-link active navbar-font-link pb-2 m-0" to="/register">Đăng ký</Link>
-                                </li>
-
-                                <li className="nav-item"><p
-                                    className="nav-link disabled navbar-font-link pb-2 m-0">|</p></li>
-
-                                <li className="nav-item">
-                                    <Link className="nav-link active navbar-font-link pb-2 m-0" to="/login">Đăng nhập</Link>
+                                <li className="nav-item user-dropdown">
+                                    <button className="nav-link avt-btn-wrapper" onClick={e => showAvtDropdown(e)}>
+                                        <img src={avt} className='avt me-2' alt="avt"/>
+                                        <i className="fa-solid fa-chevron-down fa-2xs"></i>
+                                    </button>
+                                    <div className='user-dropdown-content'>
+                                        <div className='row p-2 simple-white-btn'>
+                                            <Link to="" className='erase-underline text-black'>
+                                                <i className="fa-solid fa-user"></i>
+                                                &nbsp; Thông tin cá nhân
+                                            </Link>
+                                        </div>
+                                        <div className='row p-2 simple-white-btn'>
+                                            <Link to="" className='erase-underline text-black'>
+                                                <i className="fa-sharp fa-solid fa-clock-rotate-left"></i>
+                                                &nbsp; Lịch sử mua hàng
+                                            </Link>
+                                        </div>
+                                        <div className={'row p-2 simple-white-btn admin-btn ' + adminActiveCln}>
+                                            <button 
+                                                className='text-black emptyBtn text-align-left' 
+                                                onClick={() => clickAdmin()}
+                                            >
+                                                <i className="fa-solid fa-right-from-bracket"></i>
+                                                &nbsp; Trang Admin
+                                            </button>
+                                        </div>
+                                        <div className={'row p-2 simple-white-btn seller-btn ' + sellerActiveCln}>
+                                            <button 
+                                                className='text-black emptyBtn text-align-left' 
+                                                onClick={() => clickSeller()}
+                                            >
+                                                <i className="fa-solid fa-right-from-bracket"></i>
+                                                &nbsp; Trang người bán
+                                            </button>
+                                        </div>
+                                        <div className='row p-2 simple-white-btn'>
+                                            <button 
+                                                className='text-black emptyBtn text-align-left' 
+                                                onClick={() => clickLogOut()}
+                                            >
+                                                <i className="fa-solid fa-right-from-bracket"></i>
+                                                &nbsp; Đăng xuất
+                                            </button>
+                                        </div>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -135,11 +226,11 @@ function Header() {
                                         className="form-control search-box"
                                         id="search-box"
                                         placeholder="Cùng tìm kiếm vài món ăn ngon nào!"
-                                        onKeyDown={(e) => handleKeydown(e)}
+                                        onKeyDown={() => handleKeydown()}
                                     />
                                     <button 
                                         type="button" 
-                                        className="btn btn-primary" 
+                                        className="search-btn" 
                                         id="search-button" 
                                         onClick={() => searchProcess()}
                                     >
@@ -168,4 +259,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderUser;

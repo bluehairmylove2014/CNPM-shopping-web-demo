@@ -87,7 +87,7 @@ class BuyDetail extends React.Component {
         return(
             <div className="container pt-5">
                 <div className="row pb-4">
-                    <div className="col-12 col-lg-8">
+                    <div className="col-12 col-lg-8 moveup-fadein-animation">
                         <div className="bg-white">
                             {/* {{!-- Infor fullfill --}} */}
                             <div className="p-4 pt-3">
@@ -132,7 +132,7 @@ class BuyDetail extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-lg-4">
+                    <div className="col-12 col-lg-4 moveleft-fadein-animation">
                         <div className="bg-white h-100">
                             <div className="rtab">
                                 <i className="bi bi-credit-card-2-front-fill"><span className="lg-title"> Payment</span></i>

@@ -1,9 +1,4 @@
 
-
-// function callCallback(method, agm) {
-//     method(agm);
-// }
-
 import React from "react";
 
 function BrandMenu(props) {
