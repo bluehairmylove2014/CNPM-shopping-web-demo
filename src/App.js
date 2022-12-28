@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css'
+import './Admin.css'
 
 import Header from './components/Header/Header'
 import HeaderUser from './components/HeaderUser/HeaderUser'
@@ -13,9 +14,13 @@ import Footer from './components/Footer/Footer'
 import LoginPage from './components/Login/Login'
 import RegisterPage from './components/Register/Register'
 
-import Admin from './components/Admin/Admin'
+import AdminNavbar from './components/AdminNavbar/AdminNavbar'
+import AdminDashboard from './components/AdminDashboard/AdminDashboard'
+import UserCenter from './components/UserCenter/UserCenter'
+import SellerCenter from './components/SellerCenter/SellerCenter'
+import Posts from './components/Posts/Posts'
 
-import { BrowserRouter, Routes, Link, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 const STATUS = {
     BAN: -1,
@@ -36,10 +41,10 @@ export default class App extends React.Component {
         }
     }
     setUserAccount = (usn, psw, status, type) => {
-        if (status == STATUS.NORMAL) {
+        if (status === STATUS.NORMAL) {
             this.setState({user_account: {usn, psw, status, type}})
         }
-        else if(status == STATUS.BAN) {
+        else if(status === STATUS.BAN) {
             // Handle
         }
     }
@@ -56,7 +61,7 @@ export default class App extends React.Component {
                             <Route 
                                 path={"/"} 
                                 element={ 
-                                    this.state.user_account.status == STATUS.NORMAL ? (
+                                    this.state.user_account.status === STATUS.NORMAL ? (
                                         <><HeaderUser logoutMethod={this.removeUserAccount} userAccount={this.state.user_account}/>
                                         <HomeDetail/>
                                         <Footer/></>
@@ -68,7 +73,7 @@ export default class App extends React.Component {
                             <Route 
                                 path={"/cartdetail"} 
                                 element={ 
-                                    this.state.user_account.status == STATUS.NORMAL ? (
+                                    this.state.user_account.status === STATUS.NORMAL ? (
                                         <><HeaderUser logoutMethod={this.removeUserAccount} userAccount={this.state.user_account}/>
                                         <CartDetail/>
                                         <Footer/></>
@@ -82,7 +87,7 @@ export default class App extends React.Component {
                             <Route 
                                 path={"/item"}  
                                 element={ 
-                                    this.state.user_account.status == STATUS.NORMAL ? (
+                                    this.state.user_account.status === STATUS.NORMAL ? (
                                         <><HeaderUser logoutMethod={this.removeUserAccount} userAccount={this.state.user_account}/>
                                         <ItemDetail/>
                                         <Footer/></>
@@ -98,7 +103,7 @@ export default class App extends React.Component {
                             <Route 
                                 path={"/buy"}  
                                 element={ 
-                                    this.state.user_account.status == STATUS.NORMAL ? (
+                                    this.state.user_account.status === STATUS.NORMAL ? (
                                         <><HeaderUser logoutMethod={this.removeUserAccount} userAccount={this.state.user_account}/>
                                         <BuyDetail/>
                                         <Footer/></>
@@ -114,7 +119,7 @@ export default class App extends React.Component {
                             <Route 
                                 path={"/products"}  
                                 element={ 
-                                    this.state.user_account.status == STATUS.NORMAL ? (
+                                    this.state.user_account.status === STATUS.NORMAL ? (
                                         <><HeaderUser logoutMethod={this.removeUserAccount} userAccount={this.state.user_account}/>
                                         <Products/>
                                         <Footer/></>
@@ -141,11 +146,48 @@ export default class App extends React.Component {
                             />
                             <Route 
                                 path={"/admin"}  
-                                element={
-                                    this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
-                                        <><Header/><Products/><Footer/></>
-                                    )
-                                } 
+                                // element={
+                                //     this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
+                                //         <><Header/><Products/><Footer/></>
+                                //     )
+                                // } 
+                                element={<AdminNavbar/>}
+                            />
+                            <Route 
+                                path={"/admin/dashboard"}  
+                                // element={
+                                //     this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
+                                //         <><Header/><Products/><Footer/></>
+                                //     )
+                                // } 
+                                element={<><AdminNavbar/><AdminDashboard/></>}
+                            />
+                            <Route 
+                                path={"/admin/usercenter"}  
+                                // element={
+                                //     this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
+                                //         <><Header/><Products/><Footer/></>
+                                //     )
+                                // } 
+                                element={<><AdminNavbar/><UserCenter/></>}
+                            />
+                            <Route 
+                                path={"/admin/sellercenter"}  
+                                // element={
+                                //     this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
+                                //         <><Header/><Products/><Footer/></>
+                                //     )
+                                // } 
+                                element={<><AdminNavbar/><SellerCenter/></>}
+                            />
+                            <Route 
+                                path={"/admin/posts"}  
+                                // element={
+                                //     this.state.user_account.type == TYPE.ADMIN ? (<Admin/>) : (
+                                //         <><Header/><Products/><Footer/></>
+                                //     )
+                                // } 
+                                element={<><AdminNavbar/><Posts/></>}
                             />
                         </Routes>
                     </div>

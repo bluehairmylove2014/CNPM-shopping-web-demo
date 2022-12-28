@@ -35,7 +35,7 @@ class CartDetail extends React.Component {
         
         // Change quantity in items
         let new_items = this.state.items.map((item) => {
-            if(item.key == targetkey) {
+            if(item.key === targetkey) {
                 item.quantity = new_quantity;
             }
             return item;
@@ -44,22 +44,21 @@ class CartDetail extends React.Component {
 
         // Change quantity in cart
         let new_cart = this.state.cart.map((cart_item) => {
-            if(cart_item.key == targetkey) {
+            if(cart_item.key === targetkey) {
                 cart_item.quantity = new_quantity;
             }
             return cart_item;
         });
         this.setState({cart: new_cart});
-        
     }
     
     handleDeleteItem(target_item) {
         // Delete in items
-        let new_items = this.state.items.filter(item => item.key != target_item.key);
+        let new_items = this.state.items.filter(item => item.key !== target_item.key);
         this.setState({items: new_items});
 
         //Delete in cart
-        let new_cart = this.state.cart.filter(cart_item => cart_item.key != target_item.key);
+        let new_cart = this.state.cart.filter(cart_item => cart_item.key !== target_item.key);
         this.setState({cart: new_cart});
     }
 
@@ -90,7 +89,7 @@ class CartDetail extends React.Component {
                         />
                     </div>
                     <Link to={item.link}>
-                        <img src={item.img} className="img-fluid"/>
+                        <img src={item.img} className="img-fluid" alt='item'/>
                     </Link>
                 </div>
                 <div className="col-7 ctdetail-itemdetail">
@@ -152,7 +151,7 @@ class CartDetail extends React.Component {
             this.state.items.map((item) => {
                 let isExist = false;
                 this.state.cart.map((cartitem) => {
-                    if(cartitem.key == item.key)
+                    if(cartitem.key === item.key)
                         isExist = true;
                 });
                 if(!isExist) {     
@@ -169,7 +168,7 @@ class CartDetail extends React.Component {
             this.setState({subtotal: 0});
             this.setState({item_count: 0});
             // Empty the cart
-            this.state.cart = [];
+            this.setState({cart: []});
         }
     };
 
@@ -182,7 +181,7 @@ class CartDetail extends React.Component {
             this.setState({cart: newCart});
 
             // Check if all item is select, then check the select all
-            if($('.sellectItem:checked').length == $('.sellectItem').length) {
+            if($('.sellectItem:checked').length === $('.sellectItem').length) {
                 $('#selectAll').prop('checked', true);
             }
         }
@@ -190,7 +189,7 @@ class CartDetail extends React.Component {
             // Remove item from cart
             let newCart = this.state.cart;
             for(let i = 0; i < newCart.length; i++) {
-                if(newCart[i].key == item.key) {
+                if(newCart[i].key === item.key) {
                     newCart.splice(i, 1);
                     break;
                 }
@@ -209,7 +208,7 @@ class CartDetail extends React.Component {
             result = itemlist.map((item, index) => {
                 return this.CartItem(item);
             });
-        else if(Array.isArray(itemlist) && itemlist.length == 0) {
+        else if(Array.isArray(itemlist) && itemlist.length === 0) {
             result = (
                 <Link 
                     to="/" 
@@ -238,7 +237,7 @@ class CartDetail extends React.Component {
     };
 
     RenderCast(amount) {
-        if(amount == 0) return amount + " VNĐ";
+        if(amount === 0) return amount + " VNĐ";
         else return amount + ".000 VNĐ";
     }
 

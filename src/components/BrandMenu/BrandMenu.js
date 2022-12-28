@@ -10,7 +10,7 @@ function BrandMenu(props) {
                 <button type="button" className="brand-btn">
                     <div className="row">
                         <div className="col-12 col-lg-4 ps-0 d-flex align-items-center justify-content-center">
-                            <img src={brand.img} className="itdetail-icon"/>
+                            <img src={brand.img} className="itdetail-icon" alt='brand'/>
                         </div>
                         <div className="col-12 col-lg-8 ps-0 d-flex align-items-center justify-content-center">
                             <span className="me-title text-black text-center">{brand.name}</span>

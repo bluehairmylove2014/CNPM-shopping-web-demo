@@ -12,7 +12,7 @@ function Header() {
     }
 
     const handleKeydown = (event) => {
-        if(event.key == 'Enter') {
+        if(event.key === 'Enter') {
             navigate("/products");
         }
     }

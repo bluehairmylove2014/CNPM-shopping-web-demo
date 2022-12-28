@@ -61,15 +61,9 @@ let sale_thumnails_1 = [
     {img: foodThum2, name: "Cơm Tấm Thôn Quê", link: "/item", brand: "Sunrise Foods", rating: 3.5, rvcount: 8.291, price: 25, status: "Còn hàng"},
 ]
 
-let sale_thumnails_2 = [
-    {img: foodThum2, name: "Thập Cẩm Chả Biết Tên", link: "/item", brand: "Sunrise Foods", rating: 4, rvcount: 15.927, price: 102, status: "Còn hàng"},
-    {img: foodThum5, name: "Cơm Chay Chỉ Thiên", link: "/item", brand: "Sunrise Foods", rating: 3, rvcount: 26.546, price: 89, status: "Còn hàng"}
-]
-
 const HomeDetail = () => {
     return (
         <div className="container pt-4 mt-4 moveup-fadein-animation">
-            <img src="" />
             <section>
                 <div className='row'>
                     <div className='col-12 col-md-8 '>

@@ -22,7 +22,7 @@ export default class NotifyDropdownUser extends React.Component {
     deleteNoti = (notikey) => {
         let newNotifications = [];
         for(let i = 0; i < this.state.notifications.length; i++) {
-            if(notikey != this.state.notifications[i].key) {
+            if(notikey !== this.state.notifications[i].key) {
                 newNotifications.push(this.state.notifications[i]);
             }
         }
@@ -42,7 +42,7 @@ export default class NotifyDropdownUser extends React.Component {
                 <div className='noti' key={index}>
                     <div className='row'>
                         <div className='col-3 m-auto'>
-                            <Link to='#'><img src={notidata.img} className='img-fluid'/></Link>
+                            <Link to='#'><img src={notidata.img} className='img-fluid' alt='noti'/></Link>
                         </div>
                         <div className='col-8'>
                             <Link to='#' className='erase-underline text-black'>
@@ -64,13 +64,13 @@ export default class NotifyDropdownUser extends React.Component {
                 </div>
             );
         });
-        if(renderNoti.length == 0) {
+        if(renderNoti.length === 0) {
             return (
                 <div className='notify-dropdown-content h-auto'>
                     <p className='me-title pb-2'>THÔNG BÁO</p>
                     <hr className='mt-0'/>
                     <div className='row'>
-                        <img src={qiqifallen_icon} className='img-fluid'/>
+                        <img src={qiqifallen_icon} className='img-fluid' alt='qiqi'/>
                     </div>
                 </div>
             )

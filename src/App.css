@@ -1051,20 +1051,7 @@ Notification Popup */
   }
 }
 
-@media (max-width: 1200px) {
-  #subtotal-rtab {
-    display: none;
-  }
-  #subtotal-main {
-    display: flex;
-  }
-  #endpage-expand {
-    display: none;
-  }
-  #scnd-endpage-expand {
-    display: block;
-  }
-}
+
 
 @media (max-width: 1400px) {
   #cart-subtotal {

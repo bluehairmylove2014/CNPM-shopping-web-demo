@@ -35,15 +35,13 @@ function Register(props) {
 
         // Check if password does not match
         if(valid) {
-            if($(input_list.psw_input).val().trim() != $(input_list.cmtpsw_input).val().trim()) {
+            if($(input_list.psw_input).val().trim() !== $(input_list.cmtpsw_input).val().trim()) {
                 setRegisterError("Commit password does not match");
                 valid = false;
             }
             else {
-                let is_exist = false;
-            
                 for(const account of accounts) {
-                    if($(input_list.usn_input).val().trim() == account.usn) {
+                    if($(input_list.usn_input).val().trim() === account.usn) {
                         setRegisterError("This username is exist");
                         valid = false;
                         break;
@@ -54,13 +52,14 @@ function Register(props) {
 
         // If all requirements is meet, then upload account to database and show noti
         if(valid) {
+
             window.location.href = "#success";
         }
         return valid;
     }
     
     const is_validate = (input) => {
-        if($(input).val().trim().length == 0)
+        if($(input).val().trim().length === 0)
             return false;
         return true;
     }

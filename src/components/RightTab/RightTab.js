@@ -9,7 +9,7 @@ function RightTab(props) {
         return  <div className="col-12 col-lg-6 col-xl-12" key={item.key}>
                     <div className="row pb-2">
                         <Link to={item.link} className="col-5 d-flex erase-underline">
-                            <img src={item.img} className="img-fluid"/>
+                            <img src={item.img} className="img-fluid" alt='item'/>
                         </Link>
                         <div className="col-7">
                             <Link to={item.link} className="erase-underline"><p className="me-title text-lightblue">{item.name}</p></Link>

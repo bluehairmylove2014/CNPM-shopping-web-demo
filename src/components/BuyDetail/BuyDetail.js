@@ -25,7 +25,7 @@ class BuyDetail extends React.Component {
     handleMethodSelect(e, targetkey, methods) {
         if(e.target.checked) {
             methods.map((method) => {
-                if(method.key != targetkey) {
+                if(method.key !== targetkey) {
                     $('#' + method.key).prop('checked', false);
                 }
             })
@@ -43,7 +43,7 @@ class BuyDetail extends React.Component {
                             />
                         </div>
                         <div className="col-auto d-flex align-items-center">
-                            <img src={method.img} className="itdetail-icon"/>
+                            <img src={method.img} className="itdetail-icon" alt='icon'/>
                         </div>
                         <div className="col-auto d-flex align-items-center">
                             <label className="form-check-label" htmlFor="momo-method">
@@ -63,7 +63,7 @@ class BuyDetail extends React.Component {
         const item_list = items.map((item, index) => {
             return  <div className="row p-4" key={index}>
                         <div className="col-4 p-0">
-                            <img src={item.img} className="img-fluid small-img smooth-border"/>
+                            <img src={item.img} className="img-fluid small-img smooth-border" alt='item'/>
                         </div>
                         <div className="col-8 p-0">
                             <p className="sm-title wrap-text mb-0">{item.name}</p>

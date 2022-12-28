@@ -27,7 +27,7 @@ function Login(props) {
 
     // Methods
     function is_validate (input) {
-        if($(input).val().trim().length == 0)
+        if($(input).val().trim().length === 0)
             return false;
         return true;
     }
@@ -66,9 +66,9 @@ function Login(props) {
             let is_exist = false;
             
             for(const account of accounts) {
-                if($(input_list.usn_input).val().trim() == account.usn) {
+                if($(input_list.usn_input).val().trim() === account.usn) {
                     is_exist = true;
-                    if($(input_list.psw_input).val().trim() == account.psw) {
+                    if($(input_list.psw_input).val().trim() === account.psw) {
                         // Call callback
                         props.setAccount(account.usn, account.psw, account.status, account.type);
                         // Redirect if valid

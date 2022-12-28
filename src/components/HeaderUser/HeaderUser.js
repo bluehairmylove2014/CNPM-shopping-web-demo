@@ -17,12 +17,6 @@ const onMouseUp = e => {
     }
 }
 
-const STATUS = {
-    BAN: -1,
-    NORMAL: 1,
-    ANONYOUS: 0
-}
-
 const TYPE = {
     NORMAL_USER: 0,
     ADMIN: 1,
@@ -39,7 +33,7 @@ function HeaderUser(props) {
     }
 
     const handleKeydown = (event) => {
-        if(event.key == 'Enter') {
+        if(event.key === 'Enter') {
             navigate("/products");
         }
     }
@@ -58,16 +52,16 @@ function HeaderUser(props) {
         props.logoutMethod();
     }
     const clickAdmin = () => {
-        navigate('/admin')
+        navigate('/admin/dashboard')
     }
     const clickSeller = () => {
         
     }
 
-    if(props.userAccount.type == TYPE.ADMIN) {
+    if(props.userAccount.type === TYPE.ADMIN) {
         adminActiveCln = 'active';
     }
-    else if(props.userAccount.type == TYPE.SELLER) {
+    else if(props.userAccount.type === TYPE.SELLER) {
         sellerActiveCln = 'active';
     }
 
@@ -147,7 +141,7 @@ function HeaderUser(props) {
                                     </p>
                                     <ul className="dropdown-menu dropdown-menu-dark">
                                         <li>
-                                            <Link className="dropdown-item" hretof="/">Tiếng Việt</Link>
+                                            <Link className="dropdown-item" to="/">Tiếng Việt</Link>
                                         </li>
                                     </ul>
                                 </li>

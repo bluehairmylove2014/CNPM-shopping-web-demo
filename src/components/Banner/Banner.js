@@ -5,7 +5,7 @@ function Banner(props) {
     const banners = props.imgs;
 
     let indicators = banners.map((banner, index) => {
-        if (banner.index == 0) 
+        if (banner.index === 0) 
             return  <button type="button" 
                             data-bs-target={banner.id}
                             data-bs-slide-to={banner.index} 
@@ -22,7 +22,7 @@ function Banner(props) {
     });
 
     let inners = banners.map((banner, index) => {
-        if (banner.index == 0) 
+        if (banner.index === 0) 
             return  <Link  className="carousel-item active" 
                         to={banner.link}
                         key={index}>

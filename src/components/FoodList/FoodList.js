@@ -12,7 +12,7 @@ function FoodList(props) {
         return  (
             <div className="col-6 col-lg-4 pb-3" key={index}>
                 <div className="card card-hover">
-                    <Link to={food.link}><img src={food.img} className="card-img-top p-3"/></Link>
+                    <Link to={food.link}><img src={food.img} className="card-img-top p-3" alt='card'/></Link>
                     <div className="card-body">
                         <Link 
                             to={food.link} 
@@ -37,10 +37,10 @@ function FoodList(props) {
         )
     });
 
-    if(foodlist.length == 0) {
+    if(foodlist.length === 0) {
         foodlist.push(
-            <div className='d-flex justify-content-center align-items-center'>
-                <img src={qiqifallen} className='icon-qiqi'></img>
+            <div className='d-flex justify-content-center align-items-center' key='empty'>
+                <img src={qiqifallen} className='icon-qiqi' alt='qiqi'></img>
             </div>
         )
     }
